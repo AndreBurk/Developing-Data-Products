@@ -1,0 +1,40 @@
+Presentation of my prediction app
+========================================================
+author: 
+date: `r Sys.Date()`
+
+Introduction
+========================================================
+
+The goal of this app is to allow the user to investigate the **mtcars** dataset more deeply.
+
+Therefore the user has the option to choose between:
+- Outcome Variable
+- First Predictor
+- Second Predictor
+
+Overview of the dataset
+========================================================
+
+```{r}
+str(mtcars)
+```
+
+Functionality
+========================================================
+
+The user can choose any variable from the **mtcars** variables as outcome variable as well as any variable as predictor variable.
+
+There are 3 drop down menus from which the user can make his selections. The app then trains a linear regression model with the corresponding variables.
+
+A summary table gives the user a summary of the model with the variables from which the user can derive p-values, R-squared etc. for evaluating his choices.
+
+
+Summary statistic example
+=================
+- Coefficients and R-squared output
+
+```{r echo=FALSE}
+summary(lm(mpg ~ cyl + am, data = mtcars))$coeff
+summary(lm(mpg ~ cyl + am, data = mtcars))$r.squa
+```
